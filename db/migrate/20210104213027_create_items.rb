@@ -7,6 +7,9 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.string :image_url
       t.string :category
       t.string :brand
+      t.string :product_id
+      t.string :dimensions
+      t.string :composition
 
       t.timestamps
     end

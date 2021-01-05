@@ -16,9 +16,12 @@ class ItemsTest < ApplicationSystemTestCase
 
     fill_in "Brand", with: @item.brand
     fill_in "Category", with: @item.category
+    fill_in "Composition", with: @item.composition
     fill_in "Description", with: @item.description
+    fill_in "Dimensions", with: @item.dimensions
     fill_in "Image url", with: @item.image_url
     fill_in "Price", with: @item.price
+    fill_in "Product", with: @item.product_id
     fill_in "Title", with: @item.title
     click_on "Create Item"
 
@@ -32,9 +35,12 @@ class ItemsTest < ApplicationSystemTestCase
 
     fill_in "Brand", with: @item.brand
     fill_in "Category", with: @item.category
+    fill_in "Composition", with: @item.composition
     fill_in "Description", with: @item.description
+    fill_in "Dimensions", with: @item.dimensions
     fill_in "Image url", with: @item.image_url
     fill_in "Price", with: @item.price
+    fill_in "Product", with: @item.product_id
     fill_in "Title", with: @item.title
     click_on "Update Item"
 

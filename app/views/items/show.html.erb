@@ -30,5 +30,20 @@
   <%= @item.brand %>
 </p>
 
+<p>
+  <strong>Product:</strong>
+  <%= @item.product_id %>
+</p>
+
+<p>
+  <strong>Dimensions:</strong>
+  <%= @item.dimensions %>
+</p>
+
+<p>
+  <strong>Composition:</strong>
+  <%= @item.composition %>
+</p>
+
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

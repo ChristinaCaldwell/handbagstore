@@ -7,6 +7,9 @@ one:
   image_url: MyString
   category: MyString
   brand: MyString
+  product_id: MyString
+  dimensions: MyString
+  composition: MyString
 
 two:
   title: MyString
@@ -15,3 +18,6 @@ two:
   image_url: MyString
   category: MyString
   brand: MyString
+  product_id: MyString
+  dimensions: MyString
+  composition: MyString

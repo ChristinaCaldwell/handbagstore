@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get '/about' => 'static_pages#about'
   get '/home' => 'static_pages#home'
   
+  get '/login' => 'user#login' 
+  get '/logout' => 'user#logout'
+  
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

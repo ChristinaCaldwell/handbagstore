@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/about' => 'static_pages#about'
   get '/home' => 'static_pages#home'
   
-  get '/login' => 'user#login' 
+  get '/login' => 'user#login'
   get '/logout' => 'user#logout'
   
   

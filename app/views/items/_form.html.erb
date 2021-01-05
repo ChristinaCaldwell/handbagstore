@@ -1,62 +1,60 @@
+
+<div class="mainCont">
 <%= form_with(model: item, local: true) do |form| %>
-  <% if item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
-
-      <ul>
-        <% item.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image_url %>
-    <%= form.text_field :image_url %>
-  </div>
-
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category %>
-  </div>
-
-  <div class="field">
-    <%= form.label :brand %>
-    <%= form.text_field :brand %>
-  </div>
-
-  <div class="field">
-    <%= form.label :product_id %>
-    <%= form.text_field :product_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :dimensions %>
-    <%= form.text_field :dimensions %>
-  </div>
-
-  <div class="field">
-    <%= form.label :composition %>
-    <%= form.text_field :composition %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<% if item.errors.any? %>
+<div id="error_explanation">
+<h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+<ul>
+<% item.errors.full_messages.each do |message| %>
+<li><%= message %></li>
 <% end %>
+</ul>
+</div>
+<% end %>
+
+<div class="field">
+<%= form.label :title %>
+<%= form.text_field :title, id: :item_titl, :type =>"text"%>
+</div>
+<div class="field">
+<%= form.label :description %>
+<%= form.text_field :description, id: :item_description, :type =>"text" %>
+</div>
+<div class="field">
+<%= form.label :price %>
+<%= form.text_field :price, id: :item_price, :type =>"text" %>
+</div>
+<div class="field">
+<%= form.label :image_url %>
+<%= form.text_field :image_url, id: :item_image_url %>
+</div>
+<div class="field">
+<%= form.label :category %>
+<%= form.text_field :category, id: :item_category, :type =>"text" %>
+</div>
+<div class="field">
+<%= form.label :brand %>
+<%= form.text_field :brand, id: :item_brand, :type =>"text" %>
+</div>
+
+<div class="field">
+<%= form.label :product_id %>
+<%= form.text_field :product_id, id: :item_product_id, :type =>"text" %>
+</div>
+
+<div class="field">
+<%= form.label :dimensions %>
+<%= form.text_field :dimensions, id: :item_dimensions, :type =>"text" %>
+</div>
+
+<div class="field">
+<%= form.label :composition %>
+<%= form.text_field :composition, id: :item_composition, :type =>"text" %>
+</div>
+
+
+<div class="actions">
+<%= form.submit %>
+</div>
+<% end %>
+</div>

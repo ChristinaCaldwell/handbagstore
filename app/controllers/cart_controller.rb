@@ -10,6 +10,7 @@ class CartController < ApplicationController
   session[:cart] = {}
   cart = session[:cart]
   end
+  
   #If the product is already added it increments by 1 else product set to 1
   if cart[id] then
   cart[id] = cart[id] + 1
@@ -18,23 +19,27 @@ class CartController < ApplicationController
   end
   redirect_to :action => :index
   end
+  
   def reduce
   id = params[:id]
   cart = session[:cart]
   cart[id] = cart[id] - 1
   redirect_to :action => :index
   end
+  
   def increase
   id = params[:id]
   cart = session[:cart]
   cart[id] = cart[id] + 1
   redirect_to :action => :index
   end
+  
   def clear
   #sets session variable to nil and bring back to index
   session[:cart] = nil
   redirect_to :action => :index
   end
+  
   def index
   # passes a cart to display
   if session[:cart] then
@@ -44,7 +49,32 @@ class CartController < ApplicationController
   end
   end
   
-
+  def remove
+  id = params[:id]
+  cart = session[:cart]
+  cart.delete id
+  redirect_to :items
+  end
+  
+  def decrease
+  id = params[:id]
+  cart = session[:cart]
+  if cart[id] == 1 then
+  cart.delete id
+  else
+  cart[id] = cart[id] - 1
+  end
+  #Taking us to cart index[view] page
+  redirect_to :action => :index
+  end
+  
+  def increase
+    id = params[:id]
+    cart = session[:cart]
+    cart[id] = cart[id] + 1
+    
+    redirect_to :action => :index
+  end
 
 
 end

@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'cart/index'
   resources :items
   # get 'static_pages/home'
   # get 'static_pages/about'
-  root 'static_pages#home'
+  root to: 'static_pages#home'
   
   get '/about' => 'static_pages#about'
   get '/home' => 'static_pages#home'

@@ -3,10 +3,8 @@
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-user-o"></i>
                     </button>
-                
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
@@ -31,7 +29,6 @@
                           
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                
                           </div>
                         </div>
                       </div>
@@ -42,7 +39,7 @@
         </ul>
     </div>
     <div class="mx-auto order-0">
-        <a class="navbar-brand mx-auto" href="#">Handbag Adore</a>
+        <a class="navbar-brand mx-auto">Handbag Adore</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,10 +47,17 @@
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Right</a>
+              <form class="form-inline">
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
             </li>
+            
+      
+            
             <li class="nav-item">
-                <a class="nav-link" <%= link_to "Shopping Cart", "/cart" %>></a>
+                <a class="nav-link fa fa-shopping-bag" <%= link_to "  Shopping Cart", "/cart" %>></a>
+                
             </li>
         </ul>
     </div>

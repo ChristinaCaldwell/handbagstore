@@ -62,6 +62,6 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
-  config.hosts << "fac8eede86d443928cdbd16045970279.vfs.cloud9.us-east-1.amazonaws.com"
+  config.hosts << "f9e60569766a40bb99f5776daac42ab3.vfs.cloud9.us-east-1.amazonaws.com"
   
 end

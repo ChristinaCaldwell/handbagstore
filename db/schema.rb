@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_06_234107) do
+ActiveRecord::Schema.define(version: 2021_01_09_230949) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "title"
@@ -26,6 +26,27 @@ ActiveRecord::Schema.define(version: 2021_01_06_234107) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "orderitems", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.integer "item_id"
+    t.string "title"
+    t.text "description"
+    t.integer "quantity"
+    t.decimal "price", precision: 10
+    t.bigint "order_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_orderitems_on_order_id"
+  end
+
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.datetime "order_date"
+    t.bigint "user_id", null: false
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -38,4 +59,6 @@ ActiveRecord::Schema.define(version: 2021_01_06_234107) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orderitems", "orders"
+  add_foreign_key "orders", "users"
 end

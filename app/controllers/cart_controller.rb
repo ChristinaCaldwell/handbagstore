@@ -39,11 +39,12 @@ class CartController < ApplicationController
     redirect_to :action => :index
   end
   
-  def reduce
+  def decrease
     id = params[:id]
     cart = session[:cart]
-   cart[id] = cart[id] - 1
-    
+    if cart[id]>=1
+    cart[id] = cart[id] - 1
+    end
     redirect_to :action => :index
   end
   
@@ -68,7 +69,8 @@ class CartController < ApplicationController
     
   end
   
-
+  
+  
   
 def createOrder
   

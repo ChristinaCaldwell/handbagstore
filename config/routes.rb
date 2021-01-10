@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'subscribers/index'
   get 'orderitems/index'
   get 'orderitems/show'
   get 'orderitems/new'
@@ -33,6 +34,9 @@ Rails.application.routes.draw do
   
   get '/cart/decrease/:id' => 'cart#decrease'
   get '/cart/increase/:id' => 'cart#increase'
+  
+  resources :subscribers
+  get '/subsribers', to: 'subscribers#index'
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

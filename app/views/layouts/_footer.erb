@@ -2,13 +2,26 @@
   
   <footer class="bg-light text-center text-lg-start">
   <% if session[:login]==1%>
-  <%= link_to 'New Item', new_item_path, :class =>"button", :role=>"button" %>
+  <%= link_to 'New Item', new_item_path, :class =>"btn btn-success", :role=>"button" %>
   <% end %>
     
-  <!-- Copyright -->
-  <div class="text-center p-3">
-    © <%= Date.today.year %> Copyright:
-    <i class="text-dark">christina caldwell </i>
-  </div>
-  <!-- Copyright -->
+  
+      <div class="container-fluid">
+      <div class="socials">
+        <i class="social-icon fa fa-twitter"></i>
+        <i class="social-icon fa fa-facebook-f"></i>
+        <i class="social-icon fa fa-instagram"></i>
+        <i class="social-icon fa fa-envelope"></i>
+      </div>
+      
+      <%= link_to 'Newsletter sign-up', '/subscribers', :class =>"btn btn-success", :role=>"button" %>
+      
+        <!-- Copyright -->
+        <div class="text-center p-3">
+          © <%= Date.today.year %> Copyright:
+          <i class="text-dark">christina caldwell </i>
+        </div>
+        
+    </div>
+
 </footer>

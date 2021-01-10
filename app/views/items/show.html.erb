@@ -11,16 +11,6 @@
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <%= @item.price %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @item.image_url %>
-</p>
-
-<p>
   <strong>Category:</strong>
   <%= @item.category %>
 </p>
@@ -45,5 +35,4 @@
   <%= @item.composition %>
 </p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Back', items_path, :class => "button btn btn-info", :role => "button" %>

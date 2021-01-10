@@ -1,29 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<div id="itemsContainer">
-
-<% @items.each do |item| %>
-<div class="itemhols">
-<h1><%= item.title %></h1>
-<%= link_to (image_tag item.image_url, :class => "itemholsIm"), item %>
-<p><%= item.description %></p>
-<p>Price <%= number_to_currency(item.price, :unit => "€") %>
-<br>
-Category: <%= item.category %>
-<br>
-Brand: <%= item.brand %></p>
-
-<%= link_to 'Show', item, :class => "button", :role => "button" %>
-
-<a href="/cart/<%= item.id %>" class="button">Add To Cart</a>
-
-<% if session[:login]==1%>
-<%= link_to 'Edit', edit_item_path(item), :class => "button", :role => "button" %>
-<%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
-<% end %>
-</p>
+<div class="itemsContainer">
+  <div class="row">
+    <div class="">
+        <% @items.each do |item| %>
+          <div class="itemhols">
+          <p class="item-heading"><%= item.title %></p>
+          <%= link_to (image_tag item.image_url, :class => "item-image"), item %>
+          
+          <p>Price <%= number_to_currency(item.price, :unit => "€") %>
+          <br>
+          Category: <%= item.category %>
+          <br>
+          Brand: <%= item.brand %></p>
+          
+          <%= link_to 'More detail', item, :class => "button btn btn-info", :role => "button" %>
+          
+          <a href="/cart/<%= item.id %>" class="button btn btn-info">Add To Cart</a>
+          
+          <% if session[:login]==1%>
+          <%= link_to 'Edit', edit_item_path(item), :class => "button btn btn-success", :role => "button" %>
+          <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button btn btn-danger", :role => "button" %>
+          <% end %>
+          </p>
+          </div>
+          <% end %>
+          <br>
+    </div>
+  </div>
 </div>
-<% end %>
-</div>
-<br>
+   
+    
+    
+
+
+
 

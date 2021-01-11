@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   get 'subscribers/index'
   get 'orderitems/index'
   get 'orderitems/show'
@@ -34,6 +35,9 @@ Rails.application.routes.draw do
   
   get '/cart/decrease/:id' => 'cart#decrease'
   get '/cart/increase/:id' => 'cart#increase'
+  
+  get 'category/:title', to: 'static_pages#category'
+  
   
   resources :subscribers
   get '/subsribers', to: 'subscribers#index'

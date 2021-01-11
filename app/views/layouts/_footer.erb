@@ -3,6 +3,7 @@
   <footer class="bg-light text-center text-lg-start">
   <% if session[:login]==1%>
   <%= link_to 'New Item', new_item_path, :class =>"btn btn-success", :role=>"button" %>
+   <%= link_to 'New Category', new_category_path, :class =>"btn btn-success", :role=>"button" %>
   <% end %>
     
   
@@ -15,6 +16,8 @@
       </div>
       
       <%= link_to 'Newsletter sign-up', '/subscribers', :class =>"btn btn-success", :role=>"button" %>
+      
+     
       
         <!-- Copyright -->
         <div class="text-center p-3">

@@ -1,0 +1,25 @@
+<% @categories.each do |category| %>
+    
+    <section>
+    <div class="container-fluid ">
+   
+      <div class="col-xs-2">
+ 
+        <p class="item-heading"><%= category.title %> </p>
+        <p><%= category.description %></p>
+        <i class="fa fa-shopping-bag fa-4x"></i>
+        <p><a href="/category/<%= category.title %>" class="button"><%= category.title %></a></p>
+      </div> 
+      
+      </div>
+
+  </section>
+
+    
+    <% if @categories.length == 0 %>
+        <br />
+        <h2>There are currently no products in this category</h2>
+    <% end %>
+    
+<% end %>
+

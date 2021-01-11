@@ -29,6 +29,11 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+  
+  def search
+    st = "%#{params[:q]}%"
+    @items = Item.where("title like ?", st)
+  end
 
   # PATCH/PUT /items/1
   def update
@@ -55,4 +60,5 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:title, :description, :price, :image_url, :category, :brand, :product_id, :dimensions, :composition)
     end
+    
 end

@@ -38,6 +38,8 @@ Rails.application.routes.draw do
   
   get 'category/:title', to: 'static_pages#category'
   
+  post '/search' => 'items#search'
+  
   
   resources :subscribers
   get '/subsribers', to: 'subscribers#index'
